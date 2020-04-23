@@ -76,7 +76,7 @@ export class BookSearchPage extends Component {
                 </span>
               )}
               <span>
-                Page {currentPage} of {totalPages} pages
+                Page {currentPage+1} of {totalPages} pages
               </span>
               {hasNextPage && (
                 <span>

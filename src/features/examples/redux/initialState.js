@@ -8,8 +8,6 @@
 const initialState = {
   count: 0,
   redditList: [],
-  fetchRedditListPending: false,
-  fetchRedditListError: null,
   q: '',
   searchBookPending: false,
   searchBookError: null,
