@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { BookSearchPage } from '../../../src/features/examples/BookSearchPage';
+import { BookSearchPage } from '../../../src/features/books/BookSearchPage';
 
-describe('examples/BookSearchPage', () => {
+describe('books/BookSearchPage', () => {
   it('renders node with correct class name', () => {
     const props = {
       examples: {},
@@ -13,7 +13,7 @@ describe('examples/BookSearchPage', () => {
     );
 
     expect(
-      renderedComponent.find('.examples-book-search-page').length
+      renderedComponent.find('.books-book-search-page').length
     ).toBe(1);
   });
 });

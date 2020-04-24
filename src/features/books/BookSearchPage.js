@@ -6,7 +6,7 @@ import * as actions from './redux/actions';
 
 export class BookSearchPage extends Component {
   static propTypes = {
-    examples: PropTypes.object.isRequired,
+    books: PropTypes.object.isRequired,
     actions: PropTypes.object.isRequired,
   };
 
@@ -20,19 +20,19 @@ export class BookSearchPage extends Component {
       searchBookPending,
       foundBooks,
       searchBookError,
-    } = this.props.examples;
+    } = this.props.books;
     const { searchBook } = this.props.actions;
     // searchPreviousPage, searchNextPage
     const searchPreviousPage = () => {
-      this.props.examples.currentPage--;
+      this.props.books.currentPage--;
       searchBook();
     };
     const searchNextPage = () => {
-      this.props.examples.currentPage++;
+      this.props.books.currentPage++;
       searchBook();
     };
     return (
-      <div className="examples-book-search-page">
+      <div className="books-book-search-page">
         <h2>Book libra &lt;/></h2>
         <div className="book-search-box">
           <input
@@ -41,7 +41,7 @@ export class BookSearchPage extends Component {
             onKeyPress={this.onEnterBound}
             placeholder="title, author..."
             type="text"
-            value={this.props.examples.q}
+            value={this.props.books.q}
           />
           <button className="book-search-btn" type="button" onClick={searchBook}>
             {searchBookPending ? 'Searching...' : 'Search'}
@@ -110,7 +110,7 @@ export class BookSearchPage extends Component {
 /* istanbul ignore next */
 function mapStateToProps(state) {
   return {
-    examples: state.examples,
+    books: state.books,
   };
 }
 

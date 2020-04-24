@@ -14,8 +14,8 @@ import {
 } from './';
 
 export default {
-  path: 'examples',
-  name: 'Examples',
+  path: 'books',
+  name: 'Books',
   component: Layout,
   childRoutes: [
     { path: '', name: 'Welcome page', component: WelcomePage },

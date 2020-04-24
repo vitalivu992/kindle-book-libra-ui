@@ -1,9 +1,9 @@
 import axios from 'axios';
 import {
-  EXAMPLES_SEARCH_BOOK_BEGIN,
-  EXAMPLES_SEARCH_BOOK_SUCCESS,
-  EXAMPLES_SEARCH_BOOK_FAILURE,
-  EXAMPLES_SEARCH_BOOK_DISMISS_ERROR,
+  BOOKS_SEARCH_BOOK_BEGIN,
+  BOOKS_SEARCH_BOOK_SUCCESS,
+  BOOKS_SEARCH_BOOK_FAILURE,
+  BOOKS_SEARCH_BOOK_DISMISS_ERROR,
 } from './constants';
 
 // Rekit uses redux-thunk for async actions by default: https://github.com/gaearon/redux-thunk
@@ -12,10 +12,10 @@ export function searchBook(args = {}) {
   return (dispatch, getState) => {
     // optionally you can have getState as the second argument
     dispatch({
-      type: EXAMPLES_SEARCH_BOOK_BEGIN,
+      type: BOOKS_SEARCH_BOOK_BEGIN,
     });
-    const { examples } = getState();
-    const { pageSize, currentPage } = examples;
+    const { books } = getState();
+    const { pageSize, currentPage } = books;
     console.log(pageSize, currentPage)
 
     // Return a promise so that you could control UI flow without states in the store.
@@ -33,7 +33,7 @@ export function searchBook(args = {}) {
       doRequest.then(
         res => {
           dispatch({
-            type: EXAMPLES_SEARCH_BOOK_SUCCESS,
+            type: BOOKS_SEARCH_BOOK_SUCCESS,
             data: res.data,
           });
           resolve(res);
@@ -41,7 +41,7 @@ export function searchBook(args = {}) {
         // Use rejectHandler as the second argument so that render errors won't be caught.
         err => {
           dispatch({
-            type: EXAMPLES_SEARCH_BOOK_FAILURE,
+            type: BOOKS_SEARCH_BOOK_FAILURE,
             data: { error: err },
           });
           reject(err);
@@ -57,13 +57,13 @@ export function searchBook(args = {}) {
 // If you don't want errors to be saved in Redux store, just ignore this method.
 export function dismissSearchBookError() {
   return {
-    type: EXAMPLES_SEARCH_BOOK_DISMISS_ERROR,
+    type: BOOKS_SEARCH_BOOK_DISMISS_ERROR,
   };
 }
 
 export function reducer(state, action) {
   switch (action.type) {
-    case EXAMPLES_SEARCH_BOOK_BEGIN:
+    case BOOKS_SEARCH_BOOK_BEGIN:
       // Just after a request is sent
       return {
         ...state,
@@ -71,7 +71,7 @@ export function reducer(state, action) {
         searchBookError: null,
       };
 
-    case EXAMPLES_SEARCH_BOOK_SUCCESS:
+    case BOOKS_SEARCH_BOOK_SUCCESS:
       // The request is success
       return {
         ...state,
@@ -87,7 +87,7 @@ export function reducer(state, action) {
         searchBookError: null,
       };
 
-    case EXAMPLES_SEARCH_BOOK_FAILURE:
+    case BOOKS_SEARCH_BOOK_FAILURE:
       // The request is failed
       return {
         ...state,
@@ -95,7 +95,7 @@ export function reducer(state, action) {
         searchBookError: action.data.error,
       };
 
-    case EXAMPLES_SEARCH_BOOK_DISMISS_ERROR:
+    case BOOKS_SEARCH_BOOK_DISMISS_ERROR:
       // Dismiss the request failure error
       return {
         ...state,

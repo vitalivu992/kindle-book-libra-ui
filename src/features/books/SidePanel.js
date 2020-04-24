@@ -13,7 +13,7 @@ export class SidePanel extends Component {
 
   render() {
     return (
-      <div className="examples-side-panel">
+      <div className="books-side-panel">
         <ul>
           <li>
             <Link to="/examples">Welcome</Link>

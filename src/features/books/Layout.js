@@ -9,7 +9,7 @@ export default class Layout extends Component {
 
   render() {
     return (
-      <div className="examples-layout">
+      <div className="books-layout">
         <SidePanel />
         <div className="examples-page-container">
           {this.props.children}

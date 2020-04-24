@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { WelcomePage } from '../../../src/features/examples/WelcomePage';
+import { WelcomePage } from '../../../src/features/books/WelcomePage';
 
-describe('examples/WelcomePage', () => {
+describe('books/WelcomePage', () => {
   it('renders node with correct class name', () => {
     const props = {
       examples: {},
@@ -10,6 +10,6 @@ describe('examples/WelcomePage', () => {
     };
     const renderedComponent = shallow(<WelcomePage {...props} />);
 
-    expect(renderedComponent.find('.examples-welcome-page').length).toBe(1);
+    expect(renderedComponent.find('.books-welcome-page').length).toBe(1);
   });
 });

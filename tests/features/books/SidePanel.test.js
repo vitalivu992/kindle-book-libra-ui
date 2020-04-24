@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { SidePanel } from '../../../src/features/examples/SidePanel';
+import { SidePanel } from '../../../src/features/books/SidePanel';
 
-describe('examples/SidePanel', () => {
+describe('books/SidePanel', () => {
   it('renders node with correct class name', () => {
     const props = {
       examples: {},
@@ -10,6 +10,6 @@ describe('examples/SidePanel', () => {
     };
     const renderedComponent = shallow(<SidePanel {...props} />);
 
-    expect(renderedComponent.find('.examples-side-panel').length).toBe(1);
+    expect(renderedComponent.find('.books-side-panel').length).toBe(1);
   });
 });

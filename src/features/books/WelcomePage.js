@@ -13,7 +13,7 @@ export class WelcomePage extends Component {
 
   render() {
     return (
-      <div className="examples-welcome-page">
+      <div className="books-welcome-page">
         <a href="http://github.com/supnate/rekit">
           <img src={rekitLogo} className="app-logo" alt="logo" />
         </a>
