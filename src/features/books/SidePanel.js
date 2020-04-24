@@ -19,10 +19,7 @@ export class SidePanel extends Component {
             <Link to="/books">Welcome</Link>
           </li>
           <li>
-            <Link to="/books/counter">Counter Demo</Link>
-          </li>
-          <li>
-            <Link to="/books/reddit">Reddit API Demo</Link>
+            <Link to="/books/search">Search page</Link>
           </li>
           <li>
             <Link to="/">Back to start page</Link>

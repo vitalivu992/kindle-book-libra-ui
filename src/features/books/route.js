@@ -19,6 +19,6 @@ export default {
   component: Layout,
   childRoutes: [
     { path: '', name: 'Welcome page', component: WelcomePage },
-    { path: 'books', name: 'Search page', component: SearchPage },
+    { path: 'search', name: 'Search page', component: SearchPage },
   ],
 };

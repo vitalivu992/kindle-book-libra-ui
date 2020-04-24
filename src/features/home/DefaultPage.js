@@ -48,7 +48,7 @@ export class DefaultPage extends Component {
             </li>
             <li>
               To see examples, access:&nbsp;
-              <Link to="/examples">/examples</Link>
+              <Link to="/books">/books</Link>
             </li>
             <li>
               Rekit Studio is running at:&nbsp;
