@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from './redux/actions';
 
-export class BookSearchPage extends Component {
+export class SearchPage extends Component {
   static propTypes = {
     books: PropTypes.object.isRequired,
     actions: PropTypes.object.isRequired,
@@ -32,7 +32,7 @@ export class BookSearchPage extends Component {
       searchBook();
     };
     return (
-      <div className="books-book-search-page">
+      <div className="books-search-page">
         <h2>Book libra &lt;/></h2>
         <div className="book-search-box">
           <input
@@ -121,4 +121,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(BookSearchPage);
+export default connect(mapStateToProps, mapDispatchToProps)(SearchPage);

@@ -10,7 +10,7 @@
 import {
   WelcomePage,
   Layout,
-  BookSearchPage,
+  SearchPage,
 } from './';
 
 export default {
@@ -19,6 +19,6 @@ export default {
   component: Layout,
   childRoutes: [
     { path: '', name: 'Welcome page', component: WelcomePage },
-    { path: 'books', name: 'Book search page', component: BookSearchPage },
+    { path: 'books', name: 'Search page', component: SearchPage },
   ],
 };

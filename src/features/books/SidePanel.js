@@ -7,7 +7,7 @@ import * as actions from './redux/actions';
 
 export class SidePanel extends Component {
   static propTypes = {
-    examples: PropTypes.object.isRequired,
+    books: PropTypes.object.isRequired,
     actions: PropTypes.object.isRequired,
   };
 
@@ -16,20 +16,20 @@ export class SidePanel extends Component {
       <div className="books-side-panel">
         <ul>
           <li>
-            <Link to="/examples">Welcome</Link>
+            <Link to="/books">Welcome</Link>
           </li>
           <li>
-            <Link to="/examples/counter">Counter Demo</Link>
+            <Link to="/books/counter">Counter Demo</Link>
           </li>
           <li>
-            <Link to="/examples/reddit">Reddit API Demo</Link>
+            <Link to="/books/reddit">Reddit API Demo</Link>
           </li>
           <li>
             <Link to="/">Back to start page</Link>
           </li>
         </ul>
         <div className="memo">
-          This is a Rekit feature that contains some examples for you to quick learn how Rekit works. To remove it just
+          This is a Rekit feature that contains some example for you to quick learn how Rekit works. To remove it just
           delete the feature.
         </div>
       </div>
@@ -40,7 +40,7 @@ export class SidePanel extends Component {
 /* istanbul ignore next */
 function mapStateToProps(state) {
   return {
-    examples: state.examples,
+    books: state.books,
   };
 }
 
