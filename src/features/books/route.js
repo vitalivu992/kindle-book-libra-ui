@@ -11,6 +11,7 @@ import {
   WelcomePage,
   Layout,
   SearchPage,
+  ShowBook,
 } from './';
 
 export default {
@@ -20,5 +21,6 @@ export default {
   childRoutes: [
     { path: '', name: 'Welcome page', component: WelcomePage },
     { path: 'search', name: 'Search page', component: SearchPage },
+    { path: 'show', name: 'Show book', component: ShowBook },
   ],
 };

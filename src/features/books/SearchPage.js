@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from './redux/actions';
+import { Link } from 'react-router-dom';
 
 export class SearchPage extends Component {
   static propTypes = {
@@ -22,7 +23,7 @@ export class SearchPage extends Component {
       searchBookError,
     } = this.props.books;
     const { searchBook } = this.props.actions;
-    // searchPreviousPage, searchNextPage
+    
     const searchPreviousPage = () => {
       this.props.books.currentPage--;
       searchBook();
@@ -30,6 +31,9 @@ export class SearchPage extends Component {
     const searchNextPage = () => {
       this.props.books.currentPage++;
       searchBook();
+    };
+    const selectBook = (e, id) => {
+      this.props.books.selectedId = id;
     };
     return (
       <div className="books-search-page">
@@ -60,9 +64,11 @@ export class SearchPage extends Component {
             </p>
             {foundBooks.map(item => (
               <div className="card-book" key={item.id}>
-                <a>
-                  <div className="book-title">{item.title}</div>
-                </a>
+                <Link to={'/books/show'}>
+                  <div className="book-title" id={item.id} onClick={e => selectBook(e, item.id)}>
+                    {item.title}
+                  </div>
+                </Link>
                 <div>
                   <a>
                     <span className="book-author">{item.author}</span>

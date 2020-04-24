@@ -6,8 +6,6 @@
 
 // NOTE: initialState constant is necessary so that Rekit could auto add initial state when creating async actions.
 const initialState = {
-  count: 0,
-  redditList: [],
   q: '',
   searchBookPending: false,
   searchBookError: null,
@@ -18,6 +16,11 @@ const initialState = {
   pageSize: 10,
   totalElements: 0,
   totalPages: 0,
+  
+  getBookPending: false,
+  getBookError: null,
+  selectedId: 0,
+  book: null,
 };
 
 export default initialState;

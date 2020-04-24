@@ -8,9 +8,11 @@
 
 import initialState from './initialState';
 import { reducer as searchBookReducer } from './searchBook';
+import { reducer as getBookReducer } from './getBook';
 
 const reducers = [
   searchBookReducer,
+  getBookReducer,
 ];
 
 export default function reducer(state = initialState, action) {
