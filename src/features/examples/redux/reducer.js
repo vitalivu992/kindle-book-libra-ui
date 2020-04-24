@@ -8,11 +8,9 @@
 
 import initialState from './initialState';
 import { reducer as searchBookReducer } from './searchBook';
-import { reducer as searchNextPageReducer } from './searchNextPage';
 
 const reducers = [
   searchBookReducer,
-  searchNextPageReducer,
 ];
 
 export default function reducer(state = initialState, action) {

@@ -18,8 +18,6 @@ const initialState = {
   pageSize: 10,
   totalElements: 0,
   totalPages: 0,
-  searchNextPagePending: false,
-  searchNextPageError: null,
 };
 
 export default initialState;

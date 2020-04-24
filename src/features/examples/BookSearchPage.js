@@ -21,10 +21,19 @@ export class BookSearchPage extends Component {
       foundBooks,
       searchBookError,
     } = this.props.examples;
-    const { searchBook, searchPreviousPage, searchNextPage } = this.props.actions;
+    const { searchBook } = this.props.actions;
+    // searchPreviousPage, searchNextPage
+    const searchPreviousPage = () => {
+      this.props.examples.currentPage--;
+      searchBook();
+    };
+    const searchNextPage = () => {
+      this.props.examples.currentPage++;
+      searchBook();
+    };
     return (
       <div className="examples-book-search-page">
-      <h2>Book libra &lt;/></h2>
+        <h2>Book libra &lt;/></h2>
         <div className="book-search-box">
           <input
             className="book-search-input"
@@ -76,7 +85,7 @@ export class BookSearchPage extends Component {
                 </span>
               )}
               <span>
-                Page {currentPage+1} of {totalPages} pages
+                Page {currentPage + 1} of {totalPages} pages
               </span>
               {hasNextPage && (
                 <span>
