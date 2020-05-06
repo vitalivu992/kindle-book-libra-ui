@@ -31,7 +31,7 @@ export function searchBook(args = {}) {
           currentPage +
           '&size=' +
           pageSize +
-          (q && ('&q='+q)),
+          (q && '&q=' + q),
       );
       // const doRequest = axios.get('http://localhost:9001/api/v1/books');
 
