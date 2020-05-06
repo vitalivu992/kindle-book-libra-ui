@@ -4,7 +4,6 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import reactLogo from '../../images/react-logo.svg';
-import rekitLogo from '../../images/rekit-logo.svg';
 import * as actions from './redux/actions';
 
 export class DefaultPage extends Component {
