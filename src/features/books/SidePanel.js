@@ -16,9 +16,6 @@ export class SidePanel extends Component {
       <div className="books-side-panel">
         <ul>
           <li>
-            <Link to="/books">Welcome</Link>
-          </li>
-          <li>
             <Link to="/books/search">Search for books</Link>
           </li>
           <li>
