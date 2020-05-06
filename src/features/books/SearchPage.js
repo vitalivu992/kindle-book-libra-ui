@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from './redux/actions';
 import { Link } from 'react-router-dom';
+import { Button, Form } from 'semantic-ui-react';
 
 export class SearchPage extends Component {
   static propTypes = {
@@ -23,7 +24,7 @@ export class SearchPage extends Component {
       searchBookError,
     } = this.props.books;
     const { searchBook } = this.props.actions;
-    
+
     const searchPreviousPage = () => {
       this.props.books.currentPage--;
       searchBook();
@@ -32,6 +33,10 @@ export class SearchPage extends Component {
       this.props.books.currentPage++;
       searchBook();
     };
+
+    const handleChange = event => {
+      this.props.books.q = event.target.value;
+    };
     const selectBook = (e, id) => {
       this.props.books.selectedId = id;
     };
@@ -39,17 +44,14 @@ export class SearchPage extends Component {
       <div className="books-search-page">
         <h2>Book libra &lt;/></h2>
         <div className="book-search-box">
-          <input
-            className="book-search-input"
-            onChange={this.onChangeBound}
-            onKeyPress={this.onEnterBound}
-            placeholder="title, author..."
-            type="text"
-            value={this.props.books.q}
-          />
-          <button className="book-search-btn" type="button" onClick={searchBook}>
-            {searchBookPending ? 'Searching...' : 'Search'}
-          </button>
+          <Form>
+            <Form.Field onChange={handleChange}>
+              <input placeholder="title, author..." name="q" />
+            </Form.Field>
+            <Button type="submit" onClick={searchBook}>
+              {searchBookPending ? 'Searching...' : 'Search'}
+            </Button>
+          </Form>
         </div>
 
         {searchBookError && (

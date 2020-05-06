@@ -15,7 +15,7 @@ export function searchBook(args = {}) {
       type: BOOKS_SEARCH_BOOK_BEGIN,
     });
     const { books } = getState();
-    const { pageSize, currentPage } = books;
+    const { q, pageSize, currentPage } = books;
 
     // Return a promise so that you could control UI flow without states in the store.
     // For example: after submit a form, you need to redirect the page to another when succeeds or show some errors message if fails.
@@ -26,7 +26,13 @@ export function searchBook(args = {}) {
       // See the real-word example at:  https://github.com/supnate/rekit/blob/master/src/features/home/redux/fetchRedditReactjsList.js
       // args.error here is only for test coverage purpose.
       // const doRequest = args.error ? Promise.reject(new Error()) : Promise.resolve();
-      const doRequest = axios.get('http://localhost:9001/api/v1/books?page='+currentPage+'&size='+pageSize);
+      const doRequest = axios.get(
+        'http://localhost:9001/api/v1/books?page=' +
+          currentPage +
+          '&size=' +
+          pageSize +
+          (q && ('&q='+q)),
+      );
       // const doRequest = axios.get('http://localhost:9001/api/v1/books');
 
       doRequest.then(
