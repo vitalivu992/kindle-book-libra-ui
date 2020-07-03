@@ -13,21 +13,35 @@ export class SidePanel extends Component {
 
   render() {
     return (
-      <div className="books-side-panel">
-        <ul>
-          <li>
-            <Link to="/books">Search for books</Link>
-          </li>
-          <li>
-            <Link to="/books/show">Show a book</Link>
-          </li>
-          <li>
-            <Link to="/">Back to start page</Link>
-          </li>
-        </ul>
-        <div className="memo">
-          This is a Rekit feature that contains some example for you to quick learn how Rekit works. To remove it just
-          delete the feature.
+      <div>
+        <div className="books-side-panel">
+          <ul>
+            <li>
+              <Link to="/books">Search for books</Link>
+            </li>
+            <li>
+              <Link to="/books/show">Show a book</Link>
+            </li>
+            <li>
+              <Link to="/">All category</Link>
+            </li>
+            <li>
+              <Link to="/">Tâm Lý - Kỹ Năng Sống</Link>
+            </li>
+            <li>
+              <Link to="/">Triết Học</Link>
+            </li>
+            <li>
+              <Link to="/">Khoa Học - Kỹ Thuật</Link>
+            </li>
+          </ul>
+          <div className="memo">NÊN sao chép, chia sẻ, KHÔNG NÊN thương mại hoá
+          <hr />
+            <i>
+              Một dự án phi lợi nhuận,nhằm mục đích chia sẻ sách và đọc truyện online miễn phí vì cộng
+            đồng.
+          </i>
+          </div>
         </div>
       </div>
     );

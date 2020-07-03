@@ -33,6 +33,10 @@ export class SearchPage extends Component {
       this.props.books.currentPage++;
       searchBook();
     };
+    const searchReset = () => {
+      this.props.books.currentPage=0;
+      searchBook();
+    };
 
     const handleChange = event => {
       this.props.books.q = event.target.value;
@@ -48,7 +52,7 @@ export class SearchPage extends Component {
             <Form.Field onChange={handleChange}>
               <input placeholder="title, author..." name="q" />
             </Form.Field>
-            <Button type="submit" onClick={searchBook}>
+            <Button type="submit" onClick={searchReset}>
               {searchBookPending ? 'Searching...' : 'Search'}
             </Button>
           </Form>
